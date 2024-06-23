@@ -1,5 +1,5 @@
 import React from "react";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export const lightTheme = createTheme({
   palette: {

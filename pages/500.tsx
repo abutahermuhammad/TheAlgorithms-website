@@ -1,4 +1,4 @@
-import { Button, Typography } from "@material-ui/core";
+import { Button, Typography } from "@mui/material";
 import React from "react";
 import NextLink from "next/link";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

@@ -1,7 +1,8 @@
-import { Paper, Typography, useTheme } from "@material-ui/core";
+import { Paper, Typography, useTheme } from "@mui/material";
 import Link from "components/link";
 import useTranslation from "hooks/translation";
 import classes from "./style.module.css";
+import NextLink from "next/link";
 
 export default function Footer() {
   const theme = useTheme();
@@ -38,50 +39,50 @@ export default function Footer() {
           <Link href="/#donate">{t("donateTitle")}</Link>
         </div>
         <div className={classes.list}>
-          <a
+          <NextLink
             href="https://github.com/TheAlgorithms/"
             target="_blank"
             rel="noreferrer"
           >
             GitHub
-          </a>
-          <a
+          </NextLink>
+          <NextLink
             href="https://matrix.to/#/#TheAlgorithms_community:gitter.im"
             target="_blank"
             rel="noreferrer"
           >
             Gitter
-          </a>
-          <a
+          </NextLink>
+          <NextLink
             href="https://twitter.com/The_Algorithms"
             target="_blank"
             rel="noreferrer"
           >
             X
-          </a>
-          <a
+          </NextLink>
+          <NextLink
             href="https://github.com/TheAlgorithms/website"
             target="_blank"
             rel="noreferrer"
           >
             {t("sourceCodeFooter")}
-          </a>
-          <a
+          </NextLink>
+          <NextLink
             href="mailto:hello@the-algorithms.com"
             target="_blank"
             rel="noreferrer"
           >
             {t("contact")}
-          </a>
+          </NextLink>
         </div>
-        <a
+        <NextLink
           className={classes.vercelLogo}
           href="https://vercel.com?utm_source=thealgorithms&utm_campaign=oss"
           target="_blank"
           rel="noreferrer"
         >
           <img src="/powered-by-vercel-t.svg" alt="Powered by Vercel" />
-        </a>
+        </NextLink>
       </div>
     </Paper>
   );

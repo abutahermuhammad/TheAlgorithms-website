@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button } from "@material-ui/core";
+import { Typography, Button } from "@mui/material";
 import AlgorithmsList from "components/algorithmsList";
 import Section from "components/section";
 import Head from "components/head";
@@ -7,7 +7,7 @@ import { getLanguage, getLanguages } from "lib/languages";
 import { getLanguageName, Language } from "lib/repositories";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import LanguageIcon from "components/icon";
-import { OpenInNew } from "@material-ui/icons";
+import { OpenInNew } from "@mui/icons-material";
 import { GetStaticPaths, GetStaticProps } from "next";
 import useTranslation from "hooks/translation";
 import { shouldUseISR } from "lib/aws";

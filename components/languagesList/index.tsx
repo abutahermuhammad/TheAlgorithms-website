@@ -6,8 +6,8 @@ import {
   ListItemIcon,
   useMediaQuery,
   IconButton,
-} from "@material-ui/core";
-import { Sort, Star } from "@material-ui/icons";
+} from "@mui/material";
+import { Sort, Star } from "@mui/icons-material";
 import LanguageIcon from "components/icon";
 import { Language } from "lib/repositories";
 import Link from "next/link";
@@ -48,8 +48,8 @@ export default function LanguagesList({
         {languages
           .sort((a, b) => (reverse ? a.stars - b.stars : b.stars - a.stars))
           .map((language) => (
-            <Link key={language.name} href={language.href} passHref>
-              <a className={classes.a}>
+            <Link key={language.name} className={classes.a} href={language.href} passHref>
+              {/* <a className={classes.a}> */}
                 <ListItem button>
                   <ListItemIcon>
                     <LanguageIcon language={language.name} />
@@ -75,7 +75,7 @@ export default function LanguagesList({
                     </ListItemText>
                   )}
                 </ListItem>
-              </a>
+              {/* </a> */}
             </Link>
           ))}
       </List>

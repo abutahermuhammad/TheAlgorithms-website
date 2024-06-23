@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Typography, useTheme } from "@material-ui/core";
+import { Paper, Typography, useTheme } from "@mui/material";
 import { JumboThemeProvider } from "hooks/themes";
 import SearchBar from "components/searchBar";
 import useTranslation from "hooks/translation";

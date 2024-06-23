@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Breadcrumbs } from "@material-ui/core";
+import { Typography, Breadcrumbs } from "@mui/material";
 import Link from "components/link";
 import type { Algorithm } from "lib/models";
 import { getAlgorithm, getAlgorithmSlugs } from "lib/algorithms";

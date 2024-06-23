@@ -1,4 +1,4 @@
-import { Tooltip, Typography, useMediaQuery } from "@material-ui/core";
+import { Tooltip, Typography, useMediaQuery } from "@mui/material";
 import { Implementation } from "lib/models";
 import { Language, getLanguageName } from "lib/repositories";
 import LanguageIcon from "components/icon";

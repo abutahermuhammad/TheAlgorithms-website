@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-import { Button, LinearProgress } from "@material-ui/core";
+import { Button, LinearProgress } from "@mui/material";
 import Editor from "@monaco-editor/react";
 import React, {
   useEffect,
@@ -10,7 +10,7 @@ import React, {
   useMemo,
 } from "react";
 import useTranslation from "hooks/translation";
-import PlayArrow from "@material-ui/icons/PlayArrow";
+import PlayArrow from "@mui/icons-material/PlayArrow";
 import { useDarkTheme } from "hooks/darkTheme";
 import { XTerm } from "xterm-for-react";
 import { FitAddon } from "xterm-addon-fit";

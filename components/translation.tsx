@@ -1,4 +1,4 @@
-import { Link } from "@material-ui/core";
+import { Link } from "@mui/material";
 import { useTranslation } from "next-i18next";
 import sanitizeHtml from "sanitize-html";
 

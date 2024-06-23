@@ -7,7 +7,7 @@ import {
   IconButton,
   Tooltip,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import AlgorithmsList from "components/algorithmsList";
 import LanguagesList from "components/languagesList";
 import { getAlgorithm } from "lib/algorithms";
@@ -27,7 +27,7 @@ import {
   Functions,
   InsertPhoto,
   FormatQuote,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import Translation from "components/translation";
 import useTranslation from "hooks/translation";
 import Head from "components/head";

@@ -1,7 +1,7 @@
-import { Tooltip, Icon, Theme } from "@material-ui/core";
+import { Tooltip, Icon, Theme } from "@mui/material";
 import React from "react";
 import { Language } from "lib/repositories";
-import { useTheme } from "@material-ui/styles";
+import { useTheme } from "@mui/styles";
 import classes from "./style.module.css";
 
 function icon(name: string, version: string) {

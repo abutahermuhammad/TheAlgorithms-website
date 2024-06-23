@@ -11,6 +11,6 @@ module.exports = {
       !process.env.VERCEL
         ? locales.map((locale) => locale.code)
         : ["en"],
-    localePath: path.resolve("./public/locales"),
+    // localePath: path.resolve("./public/locales"),
   },
 };

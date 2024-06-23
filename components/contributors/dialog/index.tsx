@@ -8,13 +8,14 @@ import {
   ListItem as MuiListItem,
   ListItemAvatar,
   ListItemText,
-} from "@material-ui/core";
+} from "@mui/material";
 import Translation from "components/translation";
 import useTranslation from "hooks/translation";
 import { Algorithm, Contributor } from "lib/models";
 import React from "react";
 import GithubOriginalIcon from "react-devicons/github/original";
 import classes from "./style.module.css";
+import NextLink from "next/link";
 
 function ListItem({ contributor }: { contributor: Contributor }) {
   const t = useTranslation();
@@ -71,13 +72,14 @@ export default function ContributorsDialog({
             .map((contributor) => (
               <div key={contributor.email}>
                 {contributor.login ? (
-                  <a
+                  <NextLink
                     key={contributor.email}
                     href={`https://github.com/${contributor.login}`}
                     style={{ textDecoration: "none", color: "unset" }}
+                    passHref
                   >
                     <ListItem contributor={contributor} />
-                  </a>
+                  </NextLink>
                 ) : (
                   <ListItem contributor={contributor} />
                 )}

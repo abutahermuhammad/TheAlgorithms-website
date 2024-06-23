@@ -6,7 +6,7 @@ import {
   Button,
   Breadcrumbs,
   Tooltip,
-} from "@material-ui/core";
+} from "@mui/material";
 import React from "react";
 import Implementations from "components/implementations";
 import { normalize } from "lib/normalize";

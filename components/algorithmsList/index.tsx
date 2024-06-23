@@ -1,4 +1,4 @@
-import { Divider, Typography } from "@material-ui/core";
+import { Divider, Typography } from "@mui/material";
 import React, { Fragment, useMemo } from "react";
 import { Algorithm } from "lib/models";
 import { normalize } from "lib/normalize";

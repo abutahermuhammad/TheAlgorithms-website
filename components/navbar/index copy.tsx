@@ -77,35 +77,30 @@ export default function Navbar({
   }
 
   return (
-    <>
-      <header
-        className={
-          !menuOpen && atTop && isHome
-            ? `${position} top-0 left-0 w-full h-12 py-2.5 flex-grow bg-primary shadow-none text-white z-[1400]`
+    <AppBar
+      className={
+        !menuOpen && atTop && isHome
+          ? classes.root
           : `${classes.root} ${classes.scrolled}`
       }
+      position={position}
     >
-        {/* <JumboThemeProvider> */}
-        <div
-          className={`p-0 flex justify-between ${wide ? "px-5" : "container"}`}
+      <JumboThemeProvider>
+        <Toolbar
+          className={`${classes.toolbar} ${wide ? classes.wide : "container"}`}
         >
-          <div className="flex flex-row items-center">
           <Link href="/" style={{ color: "white" }}>
             <Typography variant="h6" className={classes.title}>
               <img src="/logo_t.svg" alt="The Algorithms logo" />
               <div className={classes.titleBox}>
-                  {/* <div className={classes.bigTitle}>The Algorithms</div> */}
+                <div className={classes.bigTitle}>The Algorithms</div>
                 <div className={classes.smallTitle}>{title}</div>
               </div>
             </Typography>
           </Link>
-
-
-            {/* {!(isHome && atTop) && !smallScreen && ( */}
+          {!(isHome && atTop) && !smallScreen && (
             <SearchBar query={query} setQuery={setQuery} small />
-            {/* )} */}
-          </div>
-
+          )}
           {smallScreen ? (
             <>
               <IconButton
@@ -144,7 +139,7 @@ export default function Navbar({
               ))}
             </div>
           )}
-        </div>
+        </Toolbar>
         <SwipeableDrawer
           onOpen={() => setMenuOpen(true)}
           onClose={() => setMenuOpen(false)}
@@ -191,9 +186,7 @@ export default function Navbar({
           onClose={() => setLangSelectOpen(false)}
           anchor={langSelectRef.current}
         />
-        {/* </JumboThemeProvider> */}
-
-      </header>
-    </>
+      </JumboThemeProvider>
+    </AppBar>
   );
 }

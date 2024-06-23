@@ -3,11 +3,12 @@ import {
   Tooltip,
   Typography,
   useMediaQuery,
-} from "@material-ui/core";
+} from "@mui/material";
 import Translation from "components/translation";
 import { Algorithm, Contributor } from "lib/models";
 import React, { useState } from "react";
 import ContributorsDialog from "./dialog";
+import Link from "next/link";
 import classes from "./style.module.css";
 
 function Avatar({ contributor }: { contributor: Contributor }) {
@@ -34,9 +35,9 @@ export default function Contributors({ algorithm }: { algorithm: Algorithm }) {
             <Tooltip key={contributor.email} title={contributor.name}>
               <div>
                 {contributor.login ? (
-                  <a href={`https://github.com/${contributor.login}`}>
+                  <Link href={`https://github.com/${contributor.login}`} passHref>
                     <Avatar contributor={contributor} />
-                  </a>
+                  </Link>
                 ) : (
                   <Avatar contributor={contributor} />
                 )}

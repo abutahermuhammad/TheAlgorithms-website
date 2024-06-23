@@ -3,7 +3,7 @@ import {
   DialogContent,
   DialogTitle,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import LanguagesList from "components/languagesList";
 import Translation from "components/translation";
 import useTranslation from "hooks/translation";

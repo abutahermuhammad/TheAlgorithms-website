@@ -5,10 +5,10 @@ import {
   Menu,
   MenuItem,
   useMediaQuery,
-} from "@material-ui/core";
+} from "@mui/material";
 import React from "react";
 import { useRouter } from "next/router";
-import { Warning } from "@material-ui/icons";
+import { Warning } from "@mui/icons-material";
 import useLocales from "hooks/locales";
 import classes from "./style.module.css";
 

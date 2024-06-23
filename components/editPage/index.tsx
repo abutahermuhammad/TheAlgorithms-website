@@ -1,5 +1,5 @@
-import { Button } from "@material-ui/core";
-import { Add, Edit, Translate } from "@material-ui/icons";
+import { Button } from "@mui/material";
+import { Add, Edit, Translate } from "@mui/icons-material";
 import { Algorithm } from "lib/models";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -8,6 +8,7 @@ import AddExplanation from "./addExplanation";
 import AddImplementation from "./addImplementation";
 import AddTranslation from "./addTranslation";
 import classes from "./style.module.css";
+import NextLink from "next/link";
 
 export default function EditPage({ algorithm }: { algorithm: Algorithm }) {
   const router = useRouter();
@@ -36,18 +37,19 @@ export default function EditPage({ algorithm }: { algorithm: Algorithm }) {
               />
             </>
           )}
-          <a
+          <NextLink
             href={(
               algorithm.explanationUrl[router.locale] ||
               algorithm.explanationUrl.en
             )
               .replace("/blob/", "/edit/")
               .replace("/tree/", "/edit/")}
+            passHref
           >
             <Button startIcon={<Edit />} className={classes.button}>
               {t("editPageEdit")}
             </Button>
-          </a>
+          </NextLink>
         </>
       ) : (
         <>

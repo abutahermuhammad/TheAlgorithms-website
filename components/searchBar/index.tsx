@@ -8,9 +8,9 @@ import {
   OutlinedInput,
   useMediaQuery,
   IconButton,
-} from "@material-ui/core";
+} from "@mui/material";
 import { useRouter } from "next/router";
-import { Search } from "@material-ui/icons";
+import { Search } from "@mui/icons-material";
 
 function Debouncer(time: number) {
   let timeout: NodeJS.Timeout;

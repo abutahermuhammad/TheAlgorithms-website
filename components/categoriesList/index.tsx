@@ -1,4 +1,4 @@
-import { ButtonBase, Card, CardContent, Typography } from "@material-ui/core";
+import { ButtonBase, Card, CardContent, Typography } from "@mui/material";
 import NextLink from "next/link";
 import classes from "./style.module.css";
 

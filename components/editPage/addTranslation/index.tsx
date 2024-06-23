@@ -3,8 +3,8 @@ import {
   DialogContent,
   DialogTitle,
   Typography,
-} from "@material-ui/core";
-import { Translate } from "@material-ui/icons";
+} from "@mui/material";
+import { Translate } from "@mui/icons-material";
 import Translation from "components/translation";
 import useTranslation from "hooks/translation";
 import { Algorithm } from "lib/models";

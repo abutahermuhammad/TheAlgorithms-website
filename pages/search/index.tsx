@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 import { useRouter } from "next/router";
 import AlgorithmsList from "components/algorithmsList";
 import useSearch from "hooks/search";
 import Section from "components/section";
 import Head from "components/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Add } from "@material-ui/icons";
+import { Add } from "@mui/icons-material";
 import useTranslation from "hooks/translation";
 import { GetStaticProps } from "next";
 import classes from "./search.module.css";

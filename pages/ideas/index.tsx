@@ -1,8 +1,9 @@
-import { CardContent, Card, Typography } from "@material-ui/core";
+import { CardContent, Card, Typography } from "@mui/material";
 import Section from "components/section";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 import classes from "./ideas.module.css";
+import Link from "next/link";
 
 export default function Ideas() {
   return (
@@ -48,21 +49,21 @@ export default function Ideas() {
                 <ol>
                   <li>
                     Malte Jürgens (Gitter:{" "}
-                    <a href="https://gitter.im/maltejur">maltejur</a>)
+                    <Link href="https://gitter.im/maltejur">maltejur</Link>)
                   </li>
                   <li>
                     David Leal (Gitter:{" "}
-                    <a href="https://gitter.im/Panquesito7">Panquesito7</a>)
+                    <Link href="https://gitter.im/Panquesito7">Panquesito7</Link>)
                   </li>
                   <li>
                     Anshul Malik (Gitter:{" "}
-                    <a href="https://gitter.im/anshulmalikce">anshulmalikce</a>)
+                    <Link href="https://gitter.im/anshulmalikce">anshulmalikce</Link>)
                   </li>
                   <li>
                     Chetan Kaushik (Gitter:{" "}
-                    <a href="https://gitter.im/dynamitechetan">
+                    <Link href="https://gitter.im/dynamitechetan">
                       dynamitechetan
-                    </a>
+                    </Link>
                     )
                   </li>
                 </ol>
@@ -106,11 +107,11 @@ export default function Ideas() {
                 <ol>
                   <li>
                     Malte Jürgens (Gitter:{" "}
-                    <a href="https://gitter.im/maltejur">maltejur</a>)
+                    <Link href="https://gitter.im/maltejur">maltejur</Link>)
                   </li>
                   <li>
                     David Leal (Gitter:{" "}
-                    <a href="https://gitter.im/Panquesito7">Panquesito7</a>)
+                    <Link href="https://gitter.im/Panquesito7">Panquesito7</Link>)
                   </li>
                 </ol>
               </p>
@@ -161,11 +162,11 @@ export default function Ideas() {
                 <ol>
                   <li>
                     Vishwesh Jainkuiya (Gitter:{" "}
-                    <a href="https://gitter.im/jainkuniya">jainkuniya</a>)
+                    <Link href="https://gitter.im/jainkuniya">jainkuniya</Link>)
                   </li>
                   <li>
                     Abhinn Mishra (Gitter:{" "}
-                    <a href="https://gitter.im/mishraabhinn">mishraabhinn</a>)
+                    <Link href="https://gitter.im/mishraabhinn">mishraabhinn</Link>)
                   </li>
                 </ol>
               </p>
@@ -205,13 +206,13 @@ export default function Ideas() {
                 <ol>
                   <li>
                     Nikhil Kala (Gitter:{" "}
-                    <a href="https://gitter.im/nikhilkala">nikhilkala</a>)
+                    <Link href="https://gitter.im/nikhilkala">nikhilkala</Link>)
                   </li>
                   <li>
                     Anup Kumar Panwar (Gitter:{" "}
-                    <a href="https://gitter.im/anupkumarpanwar">
+                    <Link href="https://gitter.im/anupkumarpanwar">
                       anupkumarpanwar
-                    </a>
+                    </Link>
                     )
                   </li>
                 </ol>
@@ -265,11 +266,11 @@ export default function Ideas() {
                 <ol>
                   <li>
                     Dhruv Manilawala (Gitter:{" "}
-                    <a href="https://gitter.im/dhruvmanila">dhruvmanila</a>)
+                    <Link href="https://gitter.im/dhruvmanila">dhruvmanila</Link>)
                   </li>
                   <li>
                     Christian Clauss (Gitter:{" "}
-                    <a href="https://gitter.im/cclauss">cclauss</a>)
+                    <Link href="https://gitter.im/cclauss">cclauss</Link>)
                   </li>
                 </ol>
               </p>
@@ -307,13 +308,13 @@ export default function Ideas() {
                 <ol>
                   <li>
                     Rohit Gupta (Gitter:{" "}
-                    <a href="https://gitter.im/r0hit-gupta">r0hit-gupta</a>)
+                    <Link href="https://gitter.im/r0hit-gupta">r0hit-gupta</Link>)
                   </li>
                   <li>
                     Chetan Kaushik (Gitter:{" "}
-                    <a href="https://gitter.im/dynamitechetan">
+                    <Link href="https://gitter.im/dynamitechetan">
                       dynamitechetan
-                    </a>
+                    </Link>
                     )
                   </li>
                 </ol>
@@ -353,17 +354,17 @@ export default function Ideas() {
                 <ol>
                   <li>
                     Madhav Gaba (Gitter:{" "}
-                    <a href="https://gitter.im/madhavgaba">madhavgaba</a>)
+                    <Link href="https://gitter.im/madhavgaba">madhavgaba</Link>)
                   </li>
                   <li>
                     Nikhil Kala (Gitter:{" "}
-                    <a href="https://gitter.im/nikhilkala">nikhilkala</a>)
+                    <Link href="https://gitter.im/nikhilkala">nikhilkala</Link>)
                   </li>
                   <li>
                     Anup Kumar Panwar (Gitter:{" "}
-                    <a href="https://gitter.im/anupkumarpanwar">
+                    <Link href="https://gitter.im/anupkumarpanwar">
                       anupkumarpanwar
-                    </a>
+                    </Link>
                     )
                   </li>
                 </ol>
@@ -402,11 +403,11 @@ export default function Ideas() {
                 <ol>
                   <li>
                     Rohit Gupta (Gitter:{" "}
-                    <a href="https://gitter.im/r0hit-gupta">r0hit-gupta</a>)
+                    <Link href="https://gitter.im/r0hit-gupta">r0hit-gupta</Link>)
                   </li>
                   <li>
                     Rahul Kathuriya (Gitter:{" "}
-                    <a href="https://gitter.im/RahulKathuria">RahulKathuria</a>)
+                    <Link href="https://gitter.im/RahulKathuria">RahulKathuria</Link>)
                   </li>
                 </ol>
               </p>

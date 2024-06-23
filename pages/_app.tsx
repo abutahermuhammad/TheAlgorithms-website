@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import "../styles/globals.css";
 import "styles/notebook.css";
 import NextNprogress from "nextjs-progressbar";
@@ -10,7 +9,9 @@ import { appWithTranslation } from "next-i18next";
 import { QueryProvider } from "hooks/query";
 import { DarkThemeProvider } from "hooks/darkTheme";
 import DefaultLayout from "layouts/default";
-import { NextQueryParamProvider } from "next-query-params";
+import NextAdapterPages from 'next-query-params/pages';
+import { QueryParamProvider } from 'use-query-params';
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -31,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <DarkThemeProvider value={[isDarkTheme, setIsDarkTheme]}>
         <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
           <QueryProvider>
-            <NextQueryParamProvider>
+            <QueryParamProvider adapter={NextAdapterPages}>
               <Head />
               <CssBaseline />
               <NextNprogress
@@ -42,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <Layout>
                 <Component {...pageProps} />
               </Layout>
-            </NextQueryParamProvider>
+            </QueryParamProvider>
           </QueryProvider>
         </ThemeProvider>
       </DarkThemeProvider>

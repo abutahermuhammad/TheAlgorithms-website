@@ -17,7 +17,7 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
-} from "@material-ui/core";
+} from "@mui/material";
 import useTranslation from "hooks/translation";
 import { getLanguageName, Language } from "lib/repositories";
 import LanguageIcon from "components/icon";
@@ -27,14 +27,15 @@ import {
   MoreHoriz,
   OpenInNew,
   PlayArrow,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import NextLink from "next/link";
-import { StringParam, useQueryParam, withDefault } from "next-query-params";
+// import { StringParam, useQueryParam, withDefault } from "next-query-params";
 import classes from "./style.module.css";
+import { StringParam, useQueryParam, withDefault } from "use-query-params";
 
 export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
   const { implementations } = algorithm;
-  const [selectedLanguague, setSelectedLanguague] = useQueryParam(
+  const [selectedLanguage, setSelectedLanguage] = useQueryParam(
     "lang",
     withDefault(StringParam, Object.keys(implementations)[0])
   );
@@ -53,7 +54,7 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
             className={classes.pre}
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
-              __html: implementations[selectedLanguague].code,
+              __html: implementations[selectedLanguage].code,
             }}
           />
         </div>
@@ -74,7 +75,7 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
               className={classes.mobileMenu}
             >
               <NextLink
-                href={`/playground?algorithm=${algorithm.slug}&language=${selectedLanguague}`}
+                href={`/playground?algorithm=${algorithm.slug}&language=${selectedLanguage}`}
                 passHref
               >
                 <MenuItem>
@@ -87,7 +88,7 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
                 <Typography>{t("fullscreen")}</Typography>
               </MenuItem>
               <Link
-                href={implementations[selectedLanguague].url}
+                href={implementations[selectedLanguage].url}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -103,7 +104,7 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
             <div className={classes.buttonsTop}>
               <Button
                 startIcon={<OpenInNew />}
-                href={implementations[selectedLanguague].url}
+                  href={implementations[selectedLanguage].url}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -122,7 +123,7 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
             </div>
             <div className={classes.buttonsBottom}>
               <NextLink
-                href={`/playground?algorithm=${algorithm.slug}&language=${selectedLanguague}`}
+                  href={`/playground?algorithm=${algorithm.slug}&language=${selectedLanguage}`}
                 passHref
               >
                 <Button
@@ -142,11 +143,11 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
       {mobile ? (
         <FormControl className={classes.mobileImplementations}>
           <InputLabel>Implementation in</InputLabel>
-          <Select value={selectedLanguague}>
+          <Select value={selectedLanguage}>
             {Object.keys(implementations).map((language) => (
               <MenuItem
                 value={language}
-                onClick={() => setSelectedLanguague(language)}
+                onClick={() => setSelectedLanguage(language)}
                 key={language}
               >
                 <div className={classes.item}>
@@ -168,7 +169,7 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
             >
               <Card
                 className={
-                  language === selectedLanguague
+                  language === selectedLanguage
                     ? `${classes.card} ${classes.current}`
                     : classes.card
                 }
@@ -177,7 +178,7 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
                   className={classes.implementation}
                   onClick={() => {
                     if (language !== "jupyter") {
-                      setSelectedLanguague(language);
+                      setSelectedLanguage(language);
                     }
                   }}
                   href={
@@ -211,14 +212,14 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
               className={classes.pre}
               // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{
-                __html: implementations[selectedLanguague].code,
+                __html: implementations[selectedLanguage].code,
               }}
             />
           </div>
           <div className={classes.buttonsTop}>
             <Button
               startIcon={<OpenInNew />}
-              href={implementations[selectedLanguague].url}
+              href={implementations[selectedLanguage].url}
               target="_blank"
               rel="noreferrer"
             >
@@ -237,7 +238,7 @@ export default function CodePreview({ algorithm }: { algorithm: Algorithm }) {
           </div>
           {!mobile && (
             <div className={classes.buttonsBottom}>
-              {selectedLanguague === "python" && (
+              {selectedLanguage === "python" && (
                 <NextLink
                   href={`/playground?algorithm=${algorithm.slug}&language=python`}
                   passHref
