@@ -1,0 +1,39 @@
+.__header {
+  @apply w-full flex flex-col justify-center items-center bg-primary text-white;
+}
+
+.__mainNav {
+  @apply w-full h-[50px] flex justify-center items-center;
+}
+
+.container {
+  @apply w-full max-w-[1280px] px-5 mx-auto flex justify-between items-center;
+}
+
+
+.leftSide {
+  @apply flex items-center gap-5;
+}
+
+.rightSide {
+  @apply flex items-center gap-6;
+}
+
+/* Menu Links */
+.menu {
+  @apply flex gap-1;
+}
+.meuItem {
+  @apply text-white hover:opacity-70 text-[15px];}
+.menuItemLink {
+  @apply text-white hover:opacity-70 font-medium text-[14px];
+}
+
+
+/* Theme Changer */
+.menuItem {
+  @apply text-[14px] gap-3;
+}
+.themeIcon {
+  @apply w-4;
+}

@@ -1,8 +1,6 @@
-/* eslint-disable */
-const path = require("path");
 const process = require("process");
 
-const locales = require("./lib/locales");
+const locales = require("./src/lib/locales");
 module.exports = {
   i18n: {
     defaultLocale: "en",

@@ -1,0 +1,57 @@
+.footer {
+  @apply relative w-full flex flex-col bg-primary text-[rgb(211,211,211)] py-8;
+  a {
+    @apply text-white;
+  }
+}
+.container {
+  @apply  w-full max-w-[1280px] px-5 mx-auto ;
+}
+
+/* Main Footer */
+.footerGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5;
+ gap: 1rem;
+        grid-template-areas:
+        "logo col1 col2 col3 col4";
+        grid-template-columns: minmax(260px, 2fr) repeat(4, minmax(0, 1fr));
+
+}
+.logoCol {
+  /* @apply ; */
+  grid-area: logo;
+}
+.listCol {}
+.list1{
+  grid-area: col1;
+}
+.list2{
+  grid-area: col2;
+}
+.list3{
+  grid-area: col3;
+}
+.list4{
+  grid-area: col4;
+}
+.listTitle {
+  @apply text-[16px] text-[#cdcdcd] font-semibold mb-2 leading-7 ;
+}
+.footerMenu {
+  @apply list-none
+}
+.footerMenuItem {
+  /* @apply  ; */
+  a {
+    @apply text-[13px] text-[#cdcdcd] leading-7 no-underline hover:opacity-80 ;
+  }
+}
+
+/* Legal */
+.copyFooter {
+  @apply pt-6 border-t border-[rgb(211,211,211)];
+}
+
+.copyText {
+  @apply text-xs text-[#cdcdcd] mt-0 mb-1 ;
+}
