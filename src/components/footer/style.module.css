@@ -10,18 +10,34 @@
 
 /* Main Footer */
 .footerGrid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5;
- gap: 1rem;
-        grid-template-areas:
-        "logo col1 col2 col3 col4";
-        grid-template-columns: minmax(260px, 2fr) repeat(4, minmax(0, 1fr));
-
+  @apply pb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5;
+  gap: 1rem;
+  grid-template-areas: "logo col1 col2 col3 col4";
+  grid-template-columns: minmax(200px, 2fr) repeat(4, minmax(0, 1fr));
 }
+
 .logoCol {
   /* @apply ; */
   grid-area: logo;
 }
+.logoTitle {
+  @apply text-xl font-bold mb-3;
+}
 .listCol {}
+
+.footerSocialMenu {
+  @apply flex gap-3;
+}
+.footerLink {
+    @apply relative block mt-8 w-5 h-5 text-[#cdcdcd] hover:opacity-80;
+
+    svg {
+      @apply w-full h-full fill-white;
+    }
+  }
+.socialIcon {
+  @apply w-5 h-5;
+}
 .list1{
   grid-area: col1;
 }
@@ -35,7 +51,7 @@
   grid-area: col4;
 }
 .listTitle {
-  @apply text-[16px] text-[#cdcdcd] font-semibold mb-2 leading-7 ;
+  @apply text-sm text-[#cdcdcd] font-semibold mb-2 leading-7 ;
 }
 .footerMenu {
   @apply list-none
@@ -49,7 +65,7 @@
 
 /* Legal */
 .copyFooter {
-  @apply pt-6 border-t border-[rgb(211,211,211)];
+  @apply pt-6 border-t border-[#858585];
 }
 
 .copyText {

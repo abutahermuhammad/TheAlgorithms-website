@@ -4,7 +4,17 @@
 
 
 h1, h2, h3, h4, h5, h6, p, ul {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  @apply m-0 p-0 box-border;
+}
+
+ul {
+  @apply list-none;
+}
+
+
+/* Root Layout */
+.website-body {
+  @apply min-h-[calc(100vh-434px)];
+  @apply flex flex-col;
+  @apply pb-12;
 }

@@ -11,7 +11,7 @@ export default function DashboardLayout({
   return (
     <>
       <NavigationBar />
-      <main>
+      <main className="website-body">
         {children}
       </main>
       <Footer />

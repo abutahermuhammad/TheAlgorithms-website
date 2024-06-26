@@ -1,11 +1,72 @@
 "use client";
 import { Paper, Typography, useTheme } from "@mui/material";
-import Link from "src/components/link";
 import useTranslation from "src/hooks/translation";
 import styles from "./style.module.css";
-import NextLink from "next/link";
 import Container from "../ui/container";
 import clsx from "clsx";
+import GitterIcon from "@/assets/icons/Gitter";
+import Discord from "@/assets/icons/Discord";
+import Link from "next/link";
+import X from "@/assets/icons/X";
+import GitHub from "@/assets/icons/GitHub";
+
+const SOCIAL_MEDIA = [
+  {
+    label: "GitHub",
+    href: "https://github.com/TheAlgorithms/",
+    icon: GitHub,
+  },
+  {
+    label: "X",
+    href: "https://the-algorithms.com/discord/",
+    icon: X,
+  },
+  {
+    label: "Gitter",
+    href: "https://matrix.to/#/#TheAlgorithms_community:gitter.im",
+    icon: GitterIcon,
+  },
+  {
+    label: "Discord",
+    href: "https://the-algorithms.com/discord/",
+    icon: Discord,
+  }
+];
+
+const MENU = [
+  {
+    label: "About",
+    href: "/#about",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+  {
+    label: "Donate",
+    href: "/donate",
+  },
+  {
+    label: "Team",
+    href: "/team",
+  }
+];
+
+const LEGAL = [
+  {
+    label: "Privacy Policy",
+    href: "/privacy",
+  },
+  {
+    label: "Terms and Conditions",
+    href: "/terms",
+  },
+  {
+    label: "Imprint",
+    href: "/imprint",
+  },
+
+];
 
 export default function Footer() {
   const t = useTranslation();
@@ -78,27 +139,48 @@ export default function Footer() {
         </NextLink>
       </div> */}
       <Container className={clsx(styles.container, styles.footerGrid)}>
+        {/* Logo Column Start */}
         <div className={styles.logoCol}>
-          <h2 className="">The Algorithms</h2>
+          <h2 className={styles.logoTitle}>The Algorithms</h2>
           <p>GitHub's largest open-source algorithm library</p>
+
+          <div className={styles.footerSocialMenu}>
+            {SOCIAL_MEDIA.map(({ label, href, icon: Icon }) => (
+              <Link
+                className={styles.footerLink}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icon className={styles.socialIcon} />
+              </Link>
+            ))}
+          </div>
         </div>
+        {/* Logo Column End */}
+
+        {/* Menu Column Start */}
         <div className={clsx(styles.listCol, styles.list1)}>
           <h2 className={styles.listTitle}>Menu</h2>
           <ul className={styles.footerMenu}>
-            <li className={styles.footerMenuItem}>
-              <Link href="/en-US/about">About</Link>
-            </li>
-            <li className={styles.footerMenuItem}>
-              <Link href="/en-US/about">Donate</Link>
-            </li>
-            <li className={styles.footerMenuItem}>
-              <Link href="/en-US/about">Contact</Link>
-            </li>
+            {MENU.map(({ label, href }) => (
+              <li className={styles.footerMenuItem} key={label}>
+                <Link href={href}>{label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
+        {/* Menu Column End */}
+
+        {/* Legal Column Start */}
         <div className={clsx(styles.listCol, styles.list2)}>
           <h2 className={styles.listTitle}>Legal</h2>
           <ul className={styles.footerMenu}>
+            {LEGAL.map(({ label, href }) => (
+              <li className={styles.footerMenuItem} key={label}>
+                <Link href={href}>{label}</Link>
+              </li>
+            ))}
             <li className={styles.footerMenuItem}>
               <Link href="/en-US/about">Terms of service</Link>
             </li>
@@ -113,6 +195,8 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+        {/* Legal Column End */}
+
         <div className={clsx(styles.listCol, styles.list3)}>
           <h2 className={styles.listTitle}>Support</h2>
           <ul className={styles.footerMenu}>

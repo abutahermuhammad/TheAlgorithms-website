@@ -14,10 +14,10 @@ const MENU = [
     name: "Algorithms",
     link: "/algorithms",
   },
-  {
-    name: "Contribute",
-    link: "/contribute",
-  },
+  // {
+  //   name: "Contribute",
+  //   link: "/contribute",
+  // },
   {
     name: "About",
     link: "/about",
