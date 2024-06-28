@@ -1,0 +1,20 @@
+.section {
+  @apply relative h-[404px] bg-primary;
+}
+.background {
+  @apply absolute top-0 w-full h-full bg-[url('/images/header-bg.svg')] bg-no-repeat bg-cover;
+}
+.content {
+  @apply relative w-full h-full flex justify-center items-center z-10;
+}
+
+.container {
+  @apply w-full max-w-[1280px] px-5 mx-auto;
+}
+
+.title {
+  @apply text-4xl uppercase font-bold text-white text-center;
+}
+.description {
+  @apply mt-3 text-[#CDCDCD] text-center;
+}
