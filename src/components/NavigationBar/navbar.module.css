@@ -1,5 +1,8 @@
 .__header {
-  @apply w-full flex flex-col justify-center items-center bg-primary text-white;
+  @apply fixed top-0 left-0 right-0 z-[9999] w-full flex flex-col justify-center items-center text-white;
+}
+.scrolled {
+  @apply bg-primary;
 }
 
 .__mainNav {

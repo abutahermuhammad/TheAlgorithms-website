@@ -8,6 +8,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import NavPopupMenu, { TNavPopupMenuOption } from "./NavPopupMenu";
 import locales from "@/lib/locales";
+import clsx from "clsx";
 
 const MENU = [
   {
@@ -63,8 +64,10 @@ function SearchBox() {
           maxWidth: "314px !important",
           height: "34px",
           padding: "9px 15px 5px 15px",
+          fontSizeAdjust: "0.6",
           color: "white",
-          backgroundColor: "#35404D",
+          backgroundColor: "#35404D33",
+          borderWidth: "2px",
           borderColor: "#35404D",
           borderRadius: "4px",
 
@@ -106,6 +109,7 @@ function Menu({ links }: { links: Array<{ name: string, link: string }> }): JSX.
 export default function NavigationBar() {
   const [theme, setTheme] = React.useState("light");
   const [language, setTLanguage] = React.useState("en");
+  const [isScrolled, setIsScrolled] = React.useState(false);
 
   const handleThemeChange = (newTheme: string) => {
     setTheme(newTheme);
@@ -122,7 +126,7 @@ export default function NavigationBar() {
   }, [theme, language]);
 
   return (
-    <header className={Styles.__header}>
+    <header className={clsx(Styles.__header, { [Styles.scrolled]: isScrolled })} >
       <nav className={Styles.__mainNav}>
         <Container className={Styles.container}>
           <div className={Styles.leftSide}>
