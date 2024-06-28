@@ -9,7 +9,7 @@ const PageHeader = () => {
       <div className={classes.content}>
         <Container class name={classes.container}>
           <h1 className={classes.title}>Find the best algorithms</h1>
-          <p className={classes.description}>We have 300+ algorithms in 20+ programming languages</p>
+          <p className={classes.description}>We have 300+ open-source algorithms in 20+ programming languages</p>
         </Container>
       </div>
     </section >
