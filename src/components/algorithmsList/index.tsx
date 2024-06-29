@@ -6,7 +6,10 @@ import useTranslation from "src/hooks/translation";
 import AlgorithmCard from "./algorithmCard";
 import classes from "./style.module.css";
 
-export default function AlgorithmsList({ algorithms, noCategories = false }) {
+export default function AlgorithmsList({ algorithms, noCategories = false }: {
+  algorithms: Algorithm[];
+  noCategories?: boolean;
+}) {
   const t = useTranslation();
 
   const splitAlgorithms = useMemo<{ [category: string]: Algorithm[] }>(() => {

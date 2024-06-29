@@ -8,9 +8,7 @@
   @apply relative w-full h-full flex justify-center items-center z-10;
 }
 
-.container {
-  @apply w-full max-w-[1280px] px-5 mx-auto;
-}
+.container {}
 
 .title {
   @apply text-4xl uppercase font-bold text-white text-center;

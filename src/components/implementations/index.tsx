@@ -1,10 +1,8 @@
-import { Tooltip, Typography, useMediaQuery } from "@mui/material";
+"use client";
+import { useMediaQuery } from "@mui/material";
 import { Implementation } from "src/lib/models";
 import { Language, getLanguageName } from "src/lib/repositories";
 import LanguageIcon from "src/components/icon";
-import Translation from "src/components/translation";
-import useTranslation from "src/hooks/translation";
-import classes from "./style.module.css";
 
 export default function Implementations({
   implementations,
@@ -15,36 +13,26 @@ export default function Implementations({
     "((max-width: 1200px) and (min-width: 700px)) or (max-width: 400px)"
   );
   const numIcons = smallWidth ? 4 : 6;
-  const t = useTranslation();
 
   return (
-    <div className={classes.rootSmall}>
+    <div className="flex justify-end">
       {Object.keys(implementations)
         .slice(0, numIcons)
-        .map((language: Language) => (
-          <div key={language} className={classes.icon}>
+        .map((language: Language | string) => (
+          <div key={language} className="me-2.5">
             <LanguageIcon
               language={language}
-              tooltip={
-                <Translation
-                  name="langImplementation"
-                  variables={{ language: getLanguageName(language) }}
-                />
-              }
+              // @ts-ignore
+              title={getLanguageName(language)}
             />
           </div>
-        ))}
+        ))
+      }
+
       {Object.keys(implementations).length > numIcons && (
-        <Tooltip
-          title={t("languages_count").replace(
-            "{}",
-            (Object.keys(implementations).length - numIcons).toString()
-          )}
-        >
-          <Typography color="textSecondary" className={classes.more}>
+        <p className="text-xs flex items-center">
             +{Object.keys(implementations).length - numIcons}
-          </Typography>
-        </Tooltip>
+        </p>
       )}
     </div>
   );

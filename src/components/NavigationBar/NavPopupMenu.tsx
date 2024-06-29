@@ -1,8 +1,7 @@
 "use client";
 import { SvgIconComponent } from "@mui/icons-material";
-import Styles from "./navbar.module.css";
 import { Button, Menu, MenuItem } from "@mui/material";
-import React, { useEffect, useId } from "react";
+import React, { useId } from "react";
 
 
 export type TNavPopupMenuOption = {
@@ -54,7 +53,7 @@ export default function NavPopupMenu({
   };
 
   return (
-    <div className={Styles.themeSelector} {...rest}>
+    <div className="" {...rest}>
       <Button
         variant="text"
         color="inherit"
@@ -85,7 +84,7 @@ export default function NavPopupMenu({
           <MenuItem
             key={option.value || option.label}
             onClick={() => handleMenuItemClick(option)}
-            className={Styles.menuItem}
+            className="text-[14px] gap-3 text-white hover:opacity-70"
           >
             {/**
              * Item Icon
@@ -96,13 +95,13 @@ export default function NavPopupMenu({
               <img
                 src={option.icon}
                 alt={option.label}
-                className={Styles.themeIcon}
+                className="w-4"
               />
             ) : (
               // @ts-ignore
-              <option.icon className={Styles.themeIcon} />
+                <option.icon className="2-4" />
             )}
-            <span className={Styles.themeName}>{option.label}</span>
+            <span className="">{option.label}</span>
           </MenuItem>
         ))}
       </Menu>
