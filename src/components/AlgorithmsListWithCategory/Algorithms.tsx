@@ -49,7 +49,7 @@ const AlgorithmList = ({
 }: {
   algorithms: Algorithm[]
 }) => {
-  console.log("ALGORITHMS", algorithms)
+  // console.log("ALGORITHMS", algorithms)
 
   return (
     <section className="col-start-5 col-end-12 row-start-2 row-end-3">
